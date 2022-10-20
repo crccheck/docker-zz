@@ -1,19 +1,22 @@
-ZZ
-==
+# ZZ
 
 This is a basic Ubuntu box I have configured with some utilities I commonly
 want but aren't in the base Ubuntu image.
 
 Extras:
 
-* ab
-* curl
-* telnet
-* wget
+- ab
+- curl
+- telnet
+- wget
 
+## Usage
 
-Usage
------
+## Open your current directory in a temporary Ubuntu container
+
+```
+alias zz='docker run --rm -v "${PWD}":/data -w /data -it crccheck/zz'
+```
 
 ### As a CoreOS toolbox
 
@@ -40,14 +43,12 @@ write_files:
 
 You can then access the parent filesystem at `/media/root`.
 
-
-Why `zz`?
----------
+## Why `zz`?
 
 1. It's very fast to type.
 2. It's very rare. I've never seen anyone else use `zz`.
 3. It shows up last alphabetically.
 
+---
 
-----
 [pod](https://github.com/crccheck/docker-pod)
