@@ -12,6 +12,8 @@ RUN apt-get update -qq && \
   curl wget telnet bsdmainutils \
   # for apachebench
   apache2-utils \
+  # Python
+  python3 python3-pip \
   # extras
   make vim git
 # don't delete cache to make it easier to install things
@@ -30,5 +32,3 @@ RUN curl --location --silent \
   --exclude="virtualenv" && \
   mv dotfiles-master /root/.dotfiles
 RUN cd /root/.dotfiles && make dotfiles vim
-RUN git clone https://github.com/Shougo/neobundle.vim /root/.dotfiles/.vim/bundle/neobundle.vim
-RUN /root/.dotfiles/.vim/bundle/neobundle.vim/bin/neoinstall
