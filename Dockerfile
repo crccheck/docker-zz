@@ -3,7 +3,7 @@
 # Simple Ubuntu container with convenient things I like built in already.
 # TODO prioritize image size so I can download this image faster
 
-FROM ubuntu:14.04
+FROM ubuntu:22.04
 LABEL org.opencontainers.image.authors="Chris <c@crccheck.com>"
 
 RUN apt-get update -qq && \
