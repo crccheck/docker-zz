@@ -4,17 +4,17 @@
 # TODO prioritize image size so I can download this image faster
 
 FROM ubuntu:14.04
-MAINTAINER Chris <c@crccheck.com>
+LABEL org.opencontainers.image.authors="Chris <c@crccheck.com>"
 
 RUN apt-get update -qq && \
-      DEBIAN_FRONTEND=noninteractive apt-get -y install \
-      # basic packages that are normally pre-installed
-      curl wget telnet bsdmainutils \
-      # for apachebench
-      apache2-utils \
-      # extras
-      make vim git
-      # don't delete cache to make it easier to install things
+  DEBIAN_FRONTEND=noninteractive apt-get -y install \
+  # basic packages that are normally pre-installed
+  curl wget telnet bsdmainutils \
+  # for apachebench
+  apache2-utils \
+  # extras
+  make vim git
+# don't delete cache to make it easier to install things
 WORKDIR /root
 ENV HOME /root
 ENV _CACHEBUSTER 3af3534
